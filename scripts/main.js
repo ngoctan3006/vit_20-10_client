@@ -2,7 +2,7 @@ window.onload = function () {
     var body = document.body,
         html = document.documentElement;
 
-    const N = 10;
+    const N = 200;
 
     // Init a variable to count for the number of times the "No" button runs away
     // After N times, the "No" button will disappear
