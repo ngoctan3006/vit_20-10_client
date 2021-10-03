@@ -19,18 +19,20 @@ h1 {
 .choice {
   width: 10%;
   height: 10vh;
-  background-color: aliceblue;
   border-radius: 5px;
   position: fixed;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .choice#yes {
   left: 30%;
-  top: 30%;
+  top: 30vh;
 }
 
 .choice#no {
   left: 60%;
-  top: 30%;
+  top: 30vh;
 }
