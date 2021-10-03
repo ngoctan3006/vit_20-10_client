@@ -56,7 +56,7 @@ window.onload = function () {
         noButton.style.top = newTop + 'px';
 
         count++;
-        if (count > 10)
+        if (count > N)
             noButton.remove();
     });
 }
