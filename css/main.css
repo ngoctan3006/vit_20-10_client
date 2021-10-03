@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("/images/universe.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+.choice {
+  width: 10%;
+  height: 10vh;
+  background-color: aliceblue;
+  border-radius: 5px;
+  position: fixed;
+  text-align: center;
+}
+
+.choice#yes {
+  left: 30%;
+  top: 30%;
+}
+
+.choice#no {
+  left: 60%;
+  top: 30%;
+}
