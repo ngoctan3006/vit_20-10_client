@@ -17,6 +17,9 @@ h1 {
 }
 
 .choice {
+  width: 10%;
+  height: 10vh;
+  border-radius: 5px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -27,23 +30,6 @@ h1 {
 button:focus {
   outline: none;
   box-shadow: none !important;
-}
-
-.btn {
-  min-width: 90px !important;
-  height: 36px !important;
-  text-decoration: none !important;
-  color: var(--text-color) !important;
-  border: none !important;
-  padding: 0 12px !important;
-  border-radius: 2px !important;
-  font-size: 1.5rem !important;
-  line-height: 1.6rem !important;
-  outline: none !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 }
 
 .choice#yes {
