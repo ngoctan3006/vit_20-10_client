@@ -62,9 +62,13 @@ window.onload = function () {
         )
             newTop = Math.floor(Math.random() * bodyHeight - buttonHeight);
 
-        // Move the button
+        // Move "No" button away
         noButton.style.left = newLeft + 'px';
         noButton.style.top = newTop + 'px';
+
+        // Move "Yes" button to replace "No" button
+        yesButton.style.left = oldLeft + 'px';
+        yesButton.style.top = oldTop + 'px';
 
         count++;
         if (count > N)
