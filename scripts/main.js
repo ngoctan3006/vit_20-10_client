@@ -7,8 +7,19 @@ window.onload = function () {
     const loadingOverlay = document.querySelector(".loading"),
         loadingTimeout = 3000;
 
+    // The "No" button
+    const noButton = document.getElementById("no");
+
+    // The "Yes" button
+    const yesButton = document.getElementById("yes");
+
     // Set timeout for loading overlay 
     setTimeout(function () { loadingOverlay.classList.add("hidden"); }, loadingTimeout);
+
+    // Show modal (invitation)
+    yesButton.addEventListener("click", function () {
+        $("#myModal").modal();
+    })
 
     // The number of times that the "No" button runs away
     const N = 200;
@@ -17,36 +28,25 @@ window.onload = function () {
     // After N times, the "No" button will disappear
     var count = 0;
 
-    // Get sizes of the document body
-    const bodyWidth = body.clientWidth,
-        bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight),
-        titleHeight = title.offsetHeight;
-
-
-    // Get sizes of the button
-    const buttonWidth = bodyWidth / 10;
-    const buttonHeight = bodyHeight / 10;
-
-    // The "No" button
-    var noButton = document.getElementById("no");
-
-    // The "Yes" button
-    var yesButton = document.getElementById("yes");
-
-    yesButton.addEventListener("click", function () {
-        $("#myModal").modal();
-    })
-
     // When the mouse moves over the button
     noButton.addEventListener("mouseover", function () {
+        // Get sizes of the document body
+        var bodyWidth = body.clientWidth,
+            bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight),
+            titleHeight = title.offsetHeight;
+
+        // Get sizes of the button
+        var buttonWidth = bodyWidth / 10;
+        var buttonHeight = bodyHeight / 10;
+
         // Get the old coordinates
-        const oldLeft = noButton.offsetLeft;
-        const oldTop = noButton.offsetTop;
+        var oldLeft = noButton.offsetLeft;
+        var oldTop = noButton.offsetTop;
 
         // Calculate new coordinates
-        let newLeft = Math.floor(Math.random() * bodyWidth - buttonWidth);
-        let newTop = Math.floor(Math.random() * bodyHeight - buttonHeight);
+        var newLeft = Math.floor(Math.random() * bodyWidth - buttonWidth);
+        var newTop = Math.floor(Math.random() * bodyHeight - buttonHeight);
 
         // Dismiss unsuitable coordinates
         while (
