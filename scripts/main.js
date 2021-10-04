@@ -5,7 +5,7 @@ window.onload = function () {
 
     // Get loading overlay
     const loadingOverlay = document.querySelector(".loading"),
-        loadingTimeout = 3000;
+        loadingTimeout = 1000;
 
     // The "No" button
     const noButton = document.getElementById("no");

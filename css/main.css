@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Lobster';
 }
 
 body {
@@ -12,7 +13,12 @@ body {
   position: relative;
 }
 
-h1 {
+#title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 36px;
   color: aliceblue;
 }
 
@@ -25,6 +31,7 @@ h1 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 12px;
 }
 
 button:focus {
