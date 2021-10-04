@@ -1,7 +1,14 @@
 window.onload = function () {
-    var body = document.body,
+    const body = document.body,
         html = document.documentElement,
         title = document.getElementById("title");
+
+    // Get loading overlay
+    const loadingOverlay = document.querySelector(".loading"),
+        loadingTimeout = 3000;
+
+    // Set timeout for loading overlay 
+    setTimeout(function () { loadingOverlay.classList.add("hidden"); }, loadingTimeout);
 
     // The number of times that the "No" button runs away
     const N = 200;
@@ -12,9 +19,9 @@ window.onload = function () {
 
     // Get sizes of the document body
     const bodyWidth = body.clientWidth;
-        bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight);
-        titleHeight = title.offsetHeight;
+    bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight);
+    titleHeight = title.offsetHeight;
 
 
     // Get sizes of the button
@@ -27,7 +34,7 @@ window.onload = function () {
     // The "Yes" button
     var yesButton = document.getElementById("yes");
 
-    yesButton.addEventListener("click", function() {
+    yesButton.addEventListener("click", function () {
         $("#myModal").modal();
     })
 
