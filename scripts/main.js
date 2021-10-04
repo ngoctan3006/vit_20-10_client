@@ -29,7 +29,7 @@ window.onload = function () {
     var count = 0;
 
     // When the mouse moves over the button
-    noButton.addEventListener("mouseover", function () {
+    noButton.addEventListener("mousedown", function () {
         // Get sizes of the document body
         var bodyWidth = body.clientWidth,
             bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
