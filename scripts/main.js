@@ -18,10 +18,10 @@ window.onload = function () {
     var count = 0;
 
     // Get sizes of the document body
-    const bodyWidth = body.clientWidth;
-    bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight);
-    titleHeight = title.offsetHeight;
+    const bodyWidth = body.clientWidth,
+        bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight),
+        titleHeight = title.offsetHeight;
 
 
     // Get sizes of the button
