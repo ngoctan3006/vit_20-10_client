@@ -1,7 +1,9 @@
 window.onload = function () {
     var body = document.body,
-        html = document.documentElement;
+        html = document.documentElement,
+        title = document.getElementById("title");
 
+    // The number of times that the "No" button runs away
     const N = 200;
 
     // Init a variable to count for the number of times the "No" button runs away
@@ -9,9 +11,11 @@ window.onload = function () {
     var count = 0;
 
     // Get sizes of the document body
-    const bodyWidth = document.body.clientWidth;
-    const bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight);
+    const bodyWidth = body.clientWidth;
+        bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight);
+        titleHeight = title.offsetHeight;
+
 
     // Get sizes of the button
     const buttonWidth = bodyWidth / 10;
@@ -45,7 +49,7 @@ window.onload = function () {
         )
             newLeft = Math.floor(Math.random() * bodyWidth - buttonWidth);
         while (
-            newTop < 20 ||
+            newTop < titleHeight ||
             newTop + buttonHeight >= bodyHeight ||
             newTop >= oldTop - buttonHeight && newTop <= oldTop + buttonHeight
         )
