@@ -1,65 +1,52 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <script language="javascript" src="/scripts/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Thư mời 20/10 VIT 2021</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng ngày 20/10</title>
+    <!-- Unicon Icon -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
-
-
 <body>
-    <div class="loading">
-        <div class='uil-ring-css' style='transform:scale(0.79);'>
-            <div></div>
+    <div class="container">
+        <div class="main">
+            <h1 class="title">
+                Chị em có iu ae hông nè???
+            </h1>
+            <div class="wrap">
+                <div class="btn btn--success" id="btn-yes">Có</div>
+                <div class="btn btn--danger" id="btn-no">Khum</div>
+            </div>
         </div>
     </div>
 
-    <div id="title">
-        <h1>Bấm "Không" thử xem :v</h1>
-    </div>
-    <div id="yes" class="choice btn btn-success">
-        <h2>Có</h2>
-    </div>
-    <div id="no" class="choice btn btn-danger">
-        <h2>Khum</h2>
-    </div>
+    <div class="modal" id="modal_1">
+        <div class="modal__body">
+            <div class="modal__close" id="modal__close">
+                <i class="uil uil-times card__close-icon"></i>
+            </div>
+            <div class="card">
+                <h1 class="card__title">
+                    Chúc mừng ngày 20/10 nha
+                    <i class="uil uil-heart"></i>
+                </h1>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        Đây là lời chúc
+                <div class="card__content">
+                    <div class="card__text">
+                        Đây là lời chúc :v
                     </div>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <br>
-                <h3>Như này được chưa?</h3>
-                <br>
-                <div class="modal-body">
-                    <img src="/images/yua-mikami.jpg" alt="">
-                </div>
-                <br>
-                <h3>Viết ở dưới nữa cũng được :v</h3>
-                <br>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div>
+                        <img src="./assets/img/vit_girls/thiep.jpg" alt="" class="card__content-img">
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
-
+    
+    <!-- Main JS -->
+    <script src="./assets/js/main.js"></script>
 </body>
-
 </html>
