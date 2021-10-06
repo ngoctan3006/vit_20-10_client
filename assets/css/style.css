@@ -201,6 +201,7 @@ body {
 .form__title {
     font-weight: 400;
     margin-bottom: 3rem;
+    font-size: var(--font-normal);
 }
 
 .form__div {
