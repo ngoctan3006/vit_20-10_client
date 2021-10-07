@@ -158,6 +158,12 @@ body {
     text-align: center;
 }
 
+.note {
+    text-align: center;
+    font-size: var(--normal-font-size);
+    margin-top: 0.5rem;
+}
+
 .card__content {
     padding: 3rem 0 2rem;
     text-align: center;

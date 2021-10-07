@@ -84,13 +84,20 @@ form_1.onsubmit = e => {
 // Set reason
 const reason = 'Vì anh em quá đẹp trai, soái ca với ga lăng nữa, hihi'
 const btnOk = document.getElementById('card-ok')
-let count = 0;
+const total = document.getElementById('total')
+const curr = document.getElementById('curr')
+let count = 0
+total.innerText = reason.length
+curr.innerText = reason.length
 const inputReason = document.getElementById('card-input')
 inputReason.oninput = () => {
     if(count < reason.length) {
-        inputReason.value = reason.substring(0, count++)
+        inputReason.value = reason.substring(0, ++count)
+        curr.innerText = reason.length - count
     } else {
         inputReason.value = reason
+    }
+    if(count === reason.length) {
         btnOk.classList.remove('btn--disable')
     }
 }
