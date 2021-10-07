@@ -189,6 +189,22 @@ body {
     pointer-events: none;
 }
 
+.heart__wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    display: flex;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.heart-flying {
+    width: 300px;
+    pointer-events: none;
+}
+
 /* Form login */
 .form {
     width: 360px;
@@ -204,7 +220,7 @@ body {
     font-size: var(--font-normal);
 }
 
-.form__div {
+.form__group {
     position: relative;
     height: 48px;
     margin-bottom: 1.5rem;

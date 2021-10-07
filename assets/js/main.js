@@ -8,6 +8,15 @@ const heartAnimation = bodymovin.loadAnimation({
     autoplay: false,
 })
 
+const heartFlying = document.getElementById('heart-flying-1')
+const heartFlyingAnimation = bodymovin.loadAnimation({
+    container: heartFlying,
+    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+})
+
 // Modal 1
 const modal_1 = document.getElementById('modal-1')
 const modalClose_1 = document.getElementById('modal-1-close')
@@ -28,6 +37,7 @@ const btnOk = document.getElementById('card-ok')
 
 btnOk.addEventListener('click', () => {
     modal_1.classList.remove('active')
+    heartFlyingAnimation.goToAndPlay(0, true)
     setTimeout(() => {
         modal_2.classList.add('active')
     }, 200)
