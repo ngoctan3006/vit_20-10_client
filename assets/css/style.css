@@ -1,6 +1,5 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 /* Base */
 :root {
@@ -25,29 +24,39 @@
 
 body {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
 }
 
-.container {
-    width: 100%;
+.main {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 0 1rem;
 }
 
 .title {
-    margin-top: 3rem;
+    position: fixed;
+    top: 3rem;
+    left: 10%;
+    right: 10%;
     font-size: var(--font-bigger);
     font-weight: 500;
     text-align: center;
 }
 
-.wrap {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 7rem;
+#btn-yes,
+#btn-no {
+    position: fixed;
+    top: 16rem;
+    transform: translateX(-50%);
+    transition: 0.2s ease-in-out;
+}
+
+#btn-yes {
+    left: 25%;
+    transform: translateX(-50%);
+}
+
+#btn-no {
+    left: 75%;
+    transform: translateX(-50%);
 }
 
 .btn {
@@ -163,13 +172,13 @@ body {
 
 .card__input {
     width: 80%;
-    height: 3rem;
     font-size: var(--font-small);
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     outline: none;
     padding: 1rem;
     background: none;
+    font-family: var(--body-font);
 }
 
 .card__btn {
