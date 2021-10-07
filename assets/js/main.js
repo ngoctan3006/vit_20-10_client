@@ -8,9 +8,25 @@ const heartAnimation = bodymovin.loadAnimation({
     autoplay: false,
 })
 
-const heartFlying = document.getElementById('heart-flying-1')
-const heartFlyingAnimation = bodymovin.loadAnimation({
-    container: heartFlying,
+const heartFlying_1 = document.getElementById('heart-flying-1')
+const heartFlying_2 = document.getElementById('heart-flying-2')
+const heartFlying_3 = document.getElementById('heart-flying-3')
+const heartFlyingAnimation_1 = bodymovin.loadAnimation({
+    container: heartFlying_1,
+    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+})
+const heartFlyingAnimation_2 = bodymovin.loadAnimation({
+    container: heartFlying_2,
+    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+})
+const heartFlyingAnimation_3 = bodymovin.loadAnimation({
+    container: heartFlying_3,
     path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
     renderer: 'svg',
     loop: true,
@@ -31,13 +47,20 @@ btnYes.addEventListener('click', () => {
     heartAnimation.goToAndPlay(0, true)
 })
 
+const form_1 = document.getElementById('form-1')
+form_1.onsubmit = e => {
+    e.preventDefault()
+}
+
 // Modal 2
 const modal_2 = document.getElementById('modal-2')
 const btnOk = document.getElementById('card-ok')
 
 btnOk.addEventListener('click', () => {
     modal_1.classList.remove('active')
-    heartFlyingAnimation.goToAndPlay(0, true)
+    heartFlyingAnimation_1.goToAndPlay(0, true)
+    heartFlyingAnimation_2.goToAndPlay(0, true)
+    heartFlyingAnimation_3.goToAndPlay(0, true)
     setTimeout(() => {
         modal_2.classList.add('active')
     }, 200)
@@ -45,10 +68,14 @@ btnOk.addEventListener('click', () => {
 
 // Login
 const login = document.getElementById('card-login')
+const modalFormLogin = document.getElementById('modal-form-login')
 const formLogin = document.getElementById('form-login')
+formLogin.onsubmit = e => {
+    e.preventDefault();
+}
 login.addEventListener('click', () => {
     modal_2.classList.remove('active')
     setTimeout(() => {
-        formLogin.classList.add('active')
+        modalFormLogin.classList.add('active')
     }, 200)
 })
