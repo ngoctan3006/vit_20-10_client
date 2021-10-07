@@ -52,6 +52,18 @@ form_1.onsubmit = e => {
     e.preventDefault()
 }
 
+// Set reason
+const reason = 'Vì anh em quá đẹp trai, soái ca với ga lăng nữa, hihi'
+let count = 0;
+const inputReason = document.getElementById('card-input')
+inputReason.oninput = () => {
+    if(count < reason.length) {
+        inputReason.value = reason.substring(0, count++)
+    } else {
+        inputReason.value = reason
+    }
+}
+
 // Modal 2
 const modal_2 = document.getElementById('modal-2')
 const btnOk = document.getElementById('card-ok')
