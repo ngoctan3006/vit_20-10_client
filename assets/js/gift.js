@@ -1,6 +1,7 @@
 // Gift animation
 const gift = document.getElementById('gift')
 const wrap_1 = document.getElementById('wrap-1')
+const wrap_2 = document.getElementById('wrap-2')
 const giftAnimation = bodymovin.loadAnimation({
     container: gift,
     path: 'https://assets2.lottiefiles.com/packages/lf20_Dn85as.json',
@@ -16,6 +17,7 @@ gift.addEventListener('click', () => {
 giftAnimation.addEventListener('complete', () => {
     gift.classList.add('hide')
     wrap_1.classList.add('hide')
+    wrap_2.classList.remove('hide')
 })
 
 const confetti = document.getElementById('confetti')
