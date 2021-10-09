@@ -75,6 +75,23 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.card {
+    animation: zoomIn 0.5s ease-in-out;
+    transform-origin: center 75%;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .modal {
@@ -128,6 +145,7 @@ body {
 .card__text {
     flex: 1;
     font-size: var(--font-normal);
+    text-align: center;
 }
 
 .card__img-container {
