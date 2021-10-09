@@ -81,6 +81,7 @@ body {
 .card {
     animation: zoomIn 0.5s ease-in-out;
     transform-origin: center 75%;
+    cursor: pointer;
 }
 
 @keyframes zoomIn {
