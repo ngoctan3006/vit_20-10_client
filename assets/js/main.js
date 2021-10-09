@@ -8,29 +8,17 @@ const heartAnimation = bodymovin.loadAnimation({
     autoplay: false,
 })
 
-const heartFlying_1 = document.getElementById('heart-flying-1')
-const heartFlying_2 = document.getElementById('heart-flying-2')
-const heartFlying_3 = document.getElementById('heart-flying-3')
-const heartFlyingAnimation_1 = bodymovin.loadAnimation({
-    container: heartFlying_1,
-    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
-})
-const heartFlyingAnimation_2 = bodymovin.loadAnimation({
-    container: heartFlying_2,
-    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
-})
-const heartFlyingAnimation_3 = bodymovin.loadAnimation({
-    container: heartFlying_3,
-    path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
+const heartFlyings = document.querySelectorAll('.heart-flying')
+const heartFlyingAnimations = []
+heartFlyings.forEach(el => {
+    const animation = bodymovin.loadAnimation({
+        container: el,
+        path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+    })
+    heartFlyingAnimations.push(animation)
 })
 
 // Yes/No
@@ -107,9 +95,9 @@ const modal_2 = document.getElementById('modal-2')
 
 btnOk.addEventListener('click', () => {
     modal_1.classList.remove('active')
-    heartFlyingAnimation_1.goToAndPlay(0, true)
-    heartFlyingAnimation_2.goToAndPlay(0, true)
-    heartFlyingAnimation_3.goToAndPlay(0, true)
+    heartFlyingAnimations.forEach(el => {
+        el.goToAndPlay(0, true)
+    })
     setTimeout(() => {
         modal_2.classList.add('active')
     }, 200)

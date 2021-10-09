@@ -187,6 +187,10 @@ body {
     font-family: var(--body-font);
 }
 
+.card__input:focus {
+    border-color: var(--first-color);
+}
+
 .card__btn {
     width: 16rem;
 }
@@ -309,6 +313,7 @@ body {
     border: 2px solid var(--first-color);
 }
 
+/* Media queries */
 @media only screen and (max-width: 999px) {
     :root {
         --font-bigger: 3rem;
