@@ -108,7 +108,7 @@ const login = document.getElementById('card-login')
 const modalFormLogin = document.getElementById('modal-form-login')
 const formLogin = document.getElementById('form-login')
 formLogin.onsubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
 }
 login.addEventListener('click', () => {
     modal_2.classList.remove('active')

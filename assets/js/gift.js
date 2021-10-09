@@ -54,5 +54,9 @@ cards.forEach(card => {
 cardAnimations.forEach((card, index) => {
     cards[index].addEventListener('click', () => {
         card.goToAndPlay(0, true)
+        cards[index].classList.add('disable')
+        setTimeout(() => {
+            card.pause()
+        }, 2500)
     })
 })
