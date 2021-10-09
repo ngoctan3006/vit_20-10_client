@@ -51,12 +51,31 @@ cards.forEach(card => {
     cardAnimations.push(animation)
 })
 
+const modal = document.querySelector('.modal')
+const closeBtn = document.querySelector('.modal__close')
+let curr = 0
 cardAnimations.forEach((card, index) => {
     cards[index].addEventListener('click', () => {
-        card.goToAndPlay(0, true)
-        cards[index].classList.add('disable')
+        curr = index
+        card.goToAndPlay(15, true)
+        cards.forEach(card => {
+            card.classList.add('disable')
+        })
         setTimeout(() => {
             card.pause()
-        }, 2500)
+            modal.classList.add('active')
+        }, 2100)
     })
+})
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active')
+    setTimeout(() => {
+        cardAnimations[curr].goToAndPlay(160, true)
+        cardAnimations[curr].addEventListener('complete', () => {
+            cards.forEach(card => {
+                card.classList.remove('disable')
+            })
+        })
+    }, 300)
 })
