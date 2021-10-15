@@ -81,3 +81,7 @@ closeBtn.addEventListener('click', () => {
         })
     }, 300)
 })
+
+const fullName = document.getElementById('full-name')
+let fn = window.sessionStorage.getItem('fullName')
+fullName.innerText = fn
