@@ -162,6 +162,7 @@ body {
     line-height: 2.3rem;
     font-family: 'Dancing Script', cursive;
     color: #890070;
+    pointer-events: none;
 }
 
 .modal__close-icon {
@@ -257,5 +258,29 @@ body {
 
     .modal__card {
         width: 19rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    :root {
+        --font-big: 1rem;
+        --font-normal: 0.935rem;
+        --font-small: 0.75rem;
+    }
+
+    .gift {
+        width: 400px;
+    }
+
+    .modal__card {
+        width: 15rem;
+    }
+
+    .modal__text {
+        width: 9.3rem;
+        height: 5.8rem;
+        top: 17.9rem;
+        right: 2.9rem;
+        line-height: 1.2rem;
     }
 }
