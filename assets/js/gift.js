@@ -84,4 +84,4 @@ closeBtn.addEventListener('click', () => {
 
 const fullName = document.getElementById('full-name')
 let fn = window.sessionStorage.getItem('fullName')
-fullName.innerText = fn
+fullName.innerText = fn ? fn : 'undefined'
