@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Custom Style -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="main">
@@ -45,7 +47,7 @@
 
                 <div class="card__content">
                     <form action="" class="card__form" id="form-1">
-                        <textarea class="card__input" id="card-input" cols="0" rows="5"></textarea>
+                        <textarea class="card__input" id="card-input" cols="0" rows="5" readonly onfocus="this.removeAttribute('readonly')" autocomplete="off"></textarea>
                         <div class="btn btn--success btn--disable card__btn" id="card-ok">OK</div>
                     </form>
                 </div>
@@ -74,9 +76,9 @@
         </div>
     </div>
 
-    <div class="modal" id="modal-form-login">
+    <div class="modal active" id="modal-form-login">
         <div class="modal__body">
-            <form action="" class="form" id="form-login" method="POST">
+            <form action="gift.html" class="form" id="form-login" method="POST">
                 <h1 class="form__title">Đăng nhập</h1>
     
                 <div class="form__group">
@@ -88,6 +90,8 @@
                     <input type="password" class="form__input" name="password" readonly onfocus="this.removeAttribute('readonly')" autocomplete="off" placeholder=" " required>
                     <label for="" class="form__label">Mật khẩu</label>
                 </div>
+
+                <p id="form-notify"></p>
     
                 <input type="submit" class="form__button" value="Đăng nhập">
             </form>

@@ -271,6 +271,13 @@ body {
     transition: 0.3s;
 }
 
+#form-notify {
+    font-size: var(--small-font-size);
+    color: red;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
 .form__button {
     display: block;
     margin-left: auto;

@@ -37,10 +37,10 @@ btnNo.addEventListener('click', () => {
     let newLeft = Math.abs(Math.floor(Math.random() * bodyWidth - btnWidth))
     let newTop = Math.abs(Math.floor(Math.random() * bodyHeight - btnHeight))
 
-    while(newLeft < btnWidth || newLeft + btnWidth >= bodyWidth || newLeft >= oldLeft - btnWidth && newLeft <= oldLeft + btnWidth) {
+    while (newLeft < btnWidth || newLeft + btnWidth >= bodyWidth || newLeft >= oldLeft - btnWidth && newLeft <= oldLeft + btnWidth) {
         newLeft = Math.abs(Math.floor(Math.random() * bodyWidth - btnWidth))
     }
-    while(newTop < titleHeight || newTop + btnHeight >= bodyHeight || newTop >= oldTop - btnHeight && newTop <= oldTop + btnHeight) {
+    while (newTop < titleHeight || newTop + btnHeight >= bodyHeight || newTop >= oldTop - btnHeight && newTop <= oldTop + btnHeight) {
         newTop = Math.abs(Math.floor(Math.random() * bodyHeight - btnHeight))
     }
 
@@ -79,13 +79,13 @@ total.innerText = reason.length
 curr.innerText = reason.length
 const inputReason = document.getElementById('card-input')
 inputReason.oninput = () => {
-    if(count < reason.length) {
+    if (count < reason.length) {
         inputReason.value = reason.substring(0, ++count)
         curr.innerText = reason.length - count
     } else {
         inputReason.value = reason
     }
-    if(count === reason.length) {
+    if (count === reason.length) {
         btnOk.classList.remove('btn--disable')
     }
 }
@@ -106,13 +106,56 @@ btnOk.addEventListener('click', () => {
 // Login
 const login = document.getElementById('card-login')
 const modalFormLogin = document.getElementById('modal-form-login')
-const formLogin = document.getElementById('form-login')
-formLogin.onsubmit = e => {
-    e.preventDefault()
-}
+const formNotify = document.getElementById('form-notify')
+const username = document.querySelector('input[name="username"]')
+const password = document.querySelector('input[name="password"]')
 login.addEventListener('click', () => {
     modal_2.classList.remove('active')
     setTimeout(() => {
         modalFormLogin.classList.add('active')
     }, 200)
+})
+
+formNotify.innerText = ''
+username.addEventListener('input', () => {
+    formNotify.innerText = ''
+})
+
+password.addEventListener('input', () => {
+    formNotify.innerText = ''
+})
+
+$('#form-login').on('submit', function (e) {
+    $.ajax({
+        type: 'POST',
+        url: 'https://from-boys-vit-with-love.netlify.app/.netlify/functions/api',
+        data: $(this).serialize(),
+        success: data => {
+            switch(data.message) {
+                case 'Wrong password':
+                    formNotify.innerText = 'Tên đăng nhập hoặc mật khẩu không chính xác'
+                    break;
+                case 'Default':
+                    formNotify.innerText = ''
+                    const cf = confirm('Tài khoản không tồn tại? Tiếp tục đăng nhập với tư cách khác?')
+                    if(cf) {
+                        window.sessionStorage.setItem('fullName', '')
+                        window.sessionStorage.setItem('image', [])
+                        window.sessionStorage.setItem('wish', [])
+                        window.location = '../../gift.html'
+                    }
+                    break;
+                case 'Success':
+                    console.log(data.wish)
+                    window.sessionStorage.setItem('fullName', data.fullName)
+                    window.sessionStorage.setItem('image', data.image)
+                    window.sessionStorage.setItem('wish', data.wish)
+                    window.location = '../../gift.html'
+                    break;
+                default:
+                    console.log('undefined')
+            }
+        }
+    })
+    e.preventDefault()
 })
