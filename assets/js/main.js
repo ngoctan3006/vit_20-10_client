@@ -146,9 +146,11 @@ $('#form-login').on('submit', function (e) {
                     }
                     break;
                 case 'Success':
-                    console.log(data.wish)
+                    console.log(data.image_h)
+                    console.log(data.image_v)
                     window.sessionStorage.setItem('fullName', data.fullName)
-                    window.sessionStorage.setItem('image', data.image)
+                    window.sessionStorage.setItem('image_h', data.image_h)
+                    window.sessionStorage.setItem('image_v', data.image_v)
                     window.sessionStorage.setItem('wish', data.wish)
                     window.location = '../../gift.html'
                     break;
