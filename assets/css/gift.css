@@ -1,5 +1,5 @@
 /* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Roboto:wght@400;500&display=swap');
 
 /* Base */
 :root {
@@ -138,26 +138,29 @@ body {
     width: 60rem;
     background-color: #fff;
     border-radius: 0.5rem;
-    padding: 5rem 1rem;
+    padding: 4rem 1rem;
     display: flex;
     align-items: center;
 }
 
-.card__text {
-    flex: 1;
-    font-size: var(--font-normal);
-    text-align: center;
-}
-
-.card__img-container {
-    flex: 1;
-    text-align: center;
-    padding: 1rem 0;
-}
-
 .card__img {
-    width: 20rem;
+    width: 100%;
     border-radius: 0.5rem;
+}
+
+.modal__text {
+    position: absolute;
+    width: 23rem;
+    height: 13rem;
+    top: 14.5rem;
+    right: 4rem;
+    font-weight: 600;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    color: #890070;
+    pointer-events: none;
 }
 
 .modal__close-icon {
@@ -169,12 +172,16 @@ body {
     opacity: 0.7;
 }
 
+.img__vertical {
+    display: none;
+}
+
 /* Media queries */
 @media only screen and (max-width: 999px) {
     :root {
         --font-bigger: 3rem;
         --font-big: 2rem;
-        --font-normal: 1.5rem;
+        --font-normal: 1.4rem;
     }
 
     .confetti {
@@ -185,8 +192,11 @@ body {
         width: 40rem;
     }
 
-    .card__img {
-        width: 12rem;
+    .modal__text {
+        width: 15rem;
+        height: 9.3rem;
+        top: 10.4rem;
+        right: 2.8rem;
     }
 }
 
@@ -194,25 +204,13 @@ body {
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .modal__card {
-        flex-direction: column;
-    }
-
-    .card__text {
-        margin-bottom: 1rem;
-    }
-
-    .card__img {
-        width: 13rem;
-    }
 }
 
 @media only screen and (max-width: 568px) {
     :root {
         --font-bigger: 2rem;
-        --font-big: 1.7rem;
-        --font-normal: 1.2rem;
+        --font-big: 1.5rem;
+        --font-normal: 1.1rem;
     }
 
     .confetti {
@@ -224,13 +222,29 @@ body {
     }
 
     .modal__card {
-        width: 28rem;
+        padding: 3rem 1rem;
+        width: 23rem;
+    }
+
+    .img__horizontal {
+        display: none;
+    }
+
+    .img__vertical {
+        display: block;
+    }
+
+    .modal__text {
+        width: 12.4rem;
+        height: 7.8rem;
+        top: 22.2rem;
+        right: 3.4rem;
     }
 }
 
 @media only screen and (max-width: 460px) {
     :root {
-        --font-big: 1.5rem;
+        --font-big: 1.2rem;
         --font-small: 0.935rem;
     }
 
@@ -240,5 +254,28 @@ body {
 
     .modal__card {
         width: 19rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    :root {
+        --font-big: 1rem;
+        --font-normal: 0.935rem;
+        --font-small: 0.75rem;
+    }
+
+    .gift {
+        width: 400px;
+    }
+
+    .modal__card {
+        width: 15rem;
+    }
+
+    .modal__text {
+        width: 9.3rem;
+        height: 5.8rem;
+        top: 17.9rem;
+        right: 2.9rem;
     }
 }

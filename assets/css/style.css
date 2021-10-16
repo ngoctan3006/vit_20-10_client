@@ -271,6 +271,13 @@ body {
     transition: 0.3s;
 }
 
+#form-notify {
+    font-size: var(--small-font-size);
+    color: red;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
 .form__button {
     display: block;
     margin-left: auto;
@@ -413,6 +420,12 @@ body {
 }
 
 @media only screen and (max-width: 460px) {
+    :root {
+        --font-big: 1.3rem;
+        --normal-font-size: 0.935rem;
+        --font-small: 1.1rem;
+    }
+
     .card {
         width: 18rem;
     }
@@ -436,5 +449,46 @@ body {
 
     .heart-flying:nth-child(2) {
         display: none;
+    }
+
+    .form {
+        width: 340px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    :root {
+        --font-big: 1.2rem;
+        --normal-font-size: 0.75rem;
+        --font-small: 1rem;
+    }
+
+    .card {
+        width: 16rem;
+    }
+
+    .card__btn {
+        width: 5rem;
+    }
+
+    .card__content {
+        padding: 2rem 0 1rem;
+    }
+
+    .heart {
+        width: 80px;
+        left: 10px;
+    }
+
+    .heart__wrap {
+        width: 280px;
+    }
+
+    .heart-flying {
+        width: 280px;
+    }
+
+    .form {
+        width: 290px;
     }
 }

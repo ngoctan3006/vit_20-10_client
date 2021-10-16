@@ -9,13 +9,15 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Custom Style -->
     <link rel="stylesheet" href="./assets/css/gift.css">
+    <!-- TextFit -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js" integrity="sha512-vLs5rAqfvmv/IpN7JustROkGAvjK/L+vgVDFe7KpdtLztqF8mZDfleK2MZj/xuOrWjma0pW+lPCMcBbPKJVC7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="main">
         <div id="wrap-1">
             <h1 class="title">
                 Xin chào
-                <span id="name">Tân</span>!
+                <span id="full-name"></span>!
                 <br>
                 Bạn đã nhận được một món quà từ
                 <br>
@@ -34,27 +36,20 @@
                 Hãy ấn vào từng tấm thiệp để thấy được tâm tư tình cảm của chúng mình nha 🥰🥰
             </h1>
 
-            <div class="wrapper">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
+            <div class="wrapper" id="wrapper"></div>
         </div>
     </div>
 
     <div class="modal">
-        <div class="modal__body">
+        <div class="modal__body" id="modal-body">
             <div class="modal__close">
                 <i class='bx bx-x modal__close-icon'></i>
             </div>
             <div class="modal__card">
-                <p class="card__text">
-                    Lời chúc ở đây nhé
-                </p>
-                <div class="card__img-container">
-                    <img src="./assets/img/thiep.jpg" alt="" class="card__img">
-                </div>
+                <div class="img__horizontal"></div>
+                <div class="img__vertical"></div>
             </div>
+            <div class="modal__text"><span></span></div>
         </div>
     </div>
 

@@ -40,6 +40,46 @@ confettiAnimation.addEventListener('complete', () => {
 })
 
 // Card
+// Genarator card
+const fullNameEl = document.getElementById('full-name')
+const fullName = JSON.parse(window.localStorage.getItem('fullName'))
+const image_h = JSON.parse(window.localStorage.getItem('image_h'))
+const image_v = JSON.parse(window.localStorage.getItem('image_v'))
+const wish = JSON.parse(window.localStorage.getItem('wish'))
+const image_h_size = image_h.length
+const image_v_size = image_v.length
+
+fullNameEl.innerText = fullName ? fullName : 'undefined'
+
+const cardWrap = document.getElementById('wrapper')
+const modalBody = document.getElementById('modal-body')
+
+wish.forEach(() => {
+    const divEl = document.createElement('div')
+    divEl.classList.add('card')
+    cardWrap.appendChild(divEl)
+})
+
+const cardElements = document.querySelectorAll('.card')
+cardElements.forEach((card, index) => {
+    console.log(card)
+    card.addEventListener('click', () => {
+        const random_h = Math.floor(Math.random() * image_h_size)
+        const random_v = Math.floor(Math.random() * image_v_size)
+        document.querySelector('.img__horizontal').innerHTML = `
+            <img src="${image_h[random_h] && image_h[random_h].search('&id=1') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
+        `
+        document.querySelector('.img__vertical').innerHTML = `
+            <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
+        `
+        document.querySelector('.modal__text span').innerText = wish[index]
+
+        // Fit text to frame
+        textFit(document.querySelector(".modal__text"))
+    })
+})
+
+// Card animation
 const cards = document.querySelectorAll('.card')
 const cardAnimations = []
 cards.forEach(card => {
