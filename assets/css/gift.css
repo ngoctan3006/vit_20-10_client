@@ -154,12 +154,10 @@ body {
     height: 13rem;
     top: 14.5rem;
     right: 4rem;
-    font-size: var(--font-normal);
     font-weight: 600;
     text-align: justify;
     display: flex;
     align-items: center;
-    line-height: 2.3rem;
     font-family: 'Dancing Script', cursive;
     color: #890070;
     pointer-events: none;
@@ -199,7 +197,6 @@ body {
         height: 9.3rem;
         top: 10.4rem;
         right: 2.8rem;
-        line-height: 1.9rem;
     }
 }
 
@@ -242,7 +239,6 @@ body {
         height: 7.8rem;
         top: 22.2rem;
         right: 3.4rem;
-        line-height: 1.5rem;
     }
 }
 
@@ -281,6 +277,5 @@ body {
         height: 5.8rem;
         top: 17.9rem;
         right: 2.9rem;
-        line-height: 1.2rem;
     }
 }
