@@ -100,14 +100,23 @@ const modalTexts = document.querySelectorAll('.modal__text')
 
 // Fit Text
 modalTexts.forEach(modalText => {
-    if(modalText.textContent.length < 70) {
+    const len = modalText.textContent.length
+    if (len <= 70) {
         jQuery(modalText).fitText(0.8)
-    } else if(modalText.textContent.length < 100) {
+    } else if (len <= 100) {
         jQuery(modalText).fitText(1.0)
-    } else if(modalText.textContent.length < 200) {
+    } else if (len <= 200) {
         jQuery(modalText).fitText(1.3)
-    } else {
+    } else if (len <= 300) {
         jQuery(modalText).fitText(1.5)
+    } else if (len <= 400) {
+        jQuery(modalText).fitText(1.7)
+    } else if (len <= 500) {
+        jQuery(modalText).fitText(1.9)
+    } else if (len <= 700) {
+        jQuery(modalText).fitText(2.2)
+    } else {
+        jQuery(modalText).fitText(2.5)
     }
 })
 
