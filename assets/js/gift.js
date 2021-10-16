@@ -60,7 +60,7 @@ const wishes = JSON.parse(window.localStorage.getItem('wish'))
 const image_h_size = image_h.length
 const image_v_size = image_v.length
 
-fullNameEl.innerText = fullName ? fullName : 'bạn'
+fullNameEl.innerText = fullName
 
 const cardWrap = document.getElementById('wrapper')
 const modalWrap = document.getElementById('modal-wrap')
