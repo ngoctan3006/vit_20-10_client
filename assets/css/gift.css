@@ -95,6 +95,7 @@ body {
     }
 }
 
+.loading__modal,
 .modal {
     position: fixed;
     top: 0;
@@ -108,6 +109,33 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+}
+
+.loading__modal {
+    background-color: #fff;
+    transform: scale(0);
+}
+
+.loading__modal.active {
+    transform: scale(1);
+}
+
+.loading {
+    max-width: 90%;
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading__animate {
+    max-width: 100%;
+    width: 30rem;
+}
+
+.loading__text {
+    font-size: var(--font-big);
+    margin-top: 2rem;
 }
 
 .active {

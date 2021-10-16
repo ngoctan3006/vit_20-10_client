@@ -1,10 +1,20 @@
+// Loading animation
+const loading = document.querySelector('.loading__animate')
+const loadAnim = bodymovin.loadAnimation({
+    container: loading,
+    path: './assets/json/waiting.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+})
+
 // Gift animation
 const gift = document.getElementById('gift')
 const wrap_1 = document.getElementById('wrap-1')
 const wrap_2 = document.getElementById('wrap-2')
 const giftAnimation = bodymovin.loadAnimation({
     container: gift,
-    path: 'https://assets2.lottiefiles.com/packages/lf20_Dn85as.json',
+    path: './assets/json/gift.json',
     renderer: 'svg',
     loop: false,
     autoplay: false,
@@ -23,13 +33,14 @@ giftAnimation.addEventListener('complete', () => {
 const confetti = document.getElementById('confetti')
 const confettiAnimation = bodymovin.loadAnimation({
     container: confetti,
-    path: 'https://assets3.lottiefiles.com/packages/lf20_rovf9gzu.json',
+    path: './assets/json/confetti.json',
     renderer: 'svg',
     loop: false,
     autoplay: false,
 })
 
 window.onload = () => {
+    document.querySelector('.loading__modal').classList.remove('active')
     setTimeout(() => {
         confettiAnimation.goToAndPlay(0, true)
     }, 500)
@@ -45,47 +56,58 @@ const fullNameEl = document.getElementById('full-name')
 const fullName = JSON.parse(window.localStorage.getItem('fullName'))
 const image_h = JSON.parse(window.localStorage.getItem('image_h'))
 const image_v = JSON.parse(window.localStorage.getItem('image_v'))
-const wish = JSON.parse(window.localStorage.getItem('wish'))
+const wishes = JSON.parse(window.localStorage.getItem('wish'))
 const image_h_size = image_h.length
 const image_v_size = image_v.length
 
-fullNameEl.innerText = fullName ? fullName : 'undefined'
+fullNameEl.innerText = fullName ? fullName : 'bạn'
 
 const cardWrap = document.getElementById('wrapper')
-const modalBody = document.getElementById('modal-body')
+const modalWrap = document.getElementById('modal-wrap')
 
-wish.forEach(() => {
+wishes.forEach(wish => {
     const divEl = document.createElement('div')
     divEl.classList.add('card')
     cardWrap.appendChild(divEl)
+
+    const modal = document.createElement('div')
+    modal.classList.add('modal')
+    const random_h = Math.floor(Math.random() * image_h_size)
+    const random_v = Math.floor(Math.random() * image_v_size)
+    modal.innerHTML = `
+        <div class="modal__body">
+            <div class="modal__close">
+                <i class='bx bx-x modal__close-icon'></i>
+            </div>
+            <div class="modal__card">
+                <div class="img__horizontal">
+                    <img src="${image_h[random_h] && image_h[random_h].search('&id=1') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
+                </div>
+                <div class="img__vertical">
+                    <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
+                </div>
+            </div>
+            <div class="modal__text">${wish.toString()}</div>
+        </div>
+    `
+    modalWrap.appendChild(modal)
 })
 
-const cardElements = document.querySelectorAll('.card')
-cardElements.forEach((card, index) => {
-    console.log(card)
-    card.addEventListener('click', () => {
-        const random_h = Math.floor(Math.random() * image_h_size)
-        const random_v = Math.floor(Math.random() * image_v_size)
-        document.querySelector('.img__horizontal').innerHTML = `
-            <img src="${image_h[random_h] && image_h[random_h].search('&id=1') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
-        `
-        document.querySelector('.img__vertical').innerHTML = `
-            <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
-        `
-        document.querySelector('.modal__text span').innerText = wish[index]
+const cards = document.querySelectorAll('.card')
+const modals = document.querySelectorAll('.modal')
+const closeBtns = document.querySelectorAll('.modal__close')
+const modalTexts = document.querySelectorAll('.modal__text')
 
-        // Fit text to frame
-        textFit(document.querySelector(".modal__text"))
-    })
+modalTexts.forEach(text => {
+    textFit(text)
 })
 
 // Card animation
-const cards = document.querySelectorAll('.card')
 const cardAnimations = []
 cards.forEach(card => {
     const animation = bodymovin.loadAnimation({
         container: card,
-        path: 'https://assets1.lottiefiles.com/packages/lf20_6bnmd1ys.json',
+        path: './assets/json/mail.json',
         renderer: 'svg',
         loop: false,
         autoplay: false,
@@ -93,31 +115,31 @@ cards.forEach(card => {
     cardAnimations.push(animation)
 })
 
-const modal = document.querySelector('.modal')
-const closeBtn = document.querySelector('.modal__close')
-let curr = 0
-cardAnimations.forEach((card, index) => {
+// Open card
+cardAnimations.forEach((cardAni, index) => {
     cards[index].addEventListener('click', () => {
-        curr = index
-        card.goToAndPlay(15, true)
+        cardAni.goToAndPlay(15, true)
         cards.forEach(card => {
             card.classList.add('disable')
         })
         setTimeout(() => {
-            card.pause()
-            modal.classList.add('active')
+            cardAni.pause()
+            modals[index].classList.add('active')
         }, 2100)
     })
 })
 
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active')
-    setTimeout(() => {
-        cardAnimations[curr].goToAndPlay(160, true)
-        cardAnimations[curr].addEventListener('complete', () => {
-            cards.forEach(card => {
-                card.classList.remove('disable')
+// Close card
+closeBtns.forEach((closeBtn, index) => {
+    closeBtn.addEventListener('click', () => {
+        modals[index].classList.remove('active')
+        setTimeout(() => {
+            cardAnimations[index].goToAndPlay(160, true)
+            cardAnimations[index].addEventListener('complete', () => {
+                cards.forEach(card => {
+                    card.classList.remove('disable')
+                })
             })
-        })
-    }, 300)
+        }, 300)
+    })
 })

@@ -2,7 +2,7 @@
 const heart = document.getElementById('heart')
 const heartAnimation = bodymovin.loadAnimation({
     container: heart,
-    path: 'https://assets1.lottiefiles.com/datafiles/nZgj7wTd56UtH6m/data.json',
+    path: './assets/json/heart.json',
     renderer: 'svg',
     loop: true,
     autoplay: false,
@@ -13,7 +13,7 @@ const heartFlyingAnimations = []
 heartFlyings.forEach(el => {
     const animation = bodymovin.loadAnimation({
         container: el,
-        path: 'https://assets3.lottiefiles.com/packages/lf20_dvmiho7v.json',
+        path: './assets/json/heartfly.json',
         renderer: 'svg',
         loop: true,
         autoplay: false,
