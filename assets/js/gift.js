@@ -87,7 +87,7 @@ wishes.forEach(wish => {
                     <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
                 </div>
             </div>
-            <div class="modal__text">${wish.toString()}</div>
+            <p class="modal__text">${wish}</p>
         </div>
     `
     modalWrap.appendChild(modal)
@@ -98,8 +98,17 @@ const modals = document.querySelectorAll('.modal')
 const closeBtns = document.querySelectorAll('.modal__close')
 const modalTexts = document.querySelectorAll('.modal__text')
 
-modalTexts.forEach(text => {
-    textFit(text)
+// Fit Text
+modalTexts.forEach(modalText => {
+    if(modalText.textContent.length < 70) {
+        jQuery(modalText).fitText(0.8)
+    } else if(modalText.textContent.length < 100) {
+        jQuery(modalText).fitText(1.0)
+    } else if(modalText.textContent.length < 200) {
+        jQuery(modalText).fitText(1.3)
+    } else {
+        jQuery(modalText).fitText(1.5)
+    }
 })
 
 // Card animation
