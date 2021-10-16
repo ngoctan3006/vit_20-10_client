@@ -67,10 +67,10 @@ cardElements.forEach((card, index) => {
         const random_h = Math.floor(Math.random() * image_h_size)
         const random_v = Math.floor(Math.random() * image_v_size)
         document.querySelector('.img__horizontal').innerHTML = `
-            <img src="${Array.isArray(image_h) && image_h[random_h].search('https://drive.google.com/uc?export=view&id=') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
+            <img src="${image_h[random_h] && image_h[random_h].search('&id=1') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
         `
         document.querySelector('.img__vertical').innerHTML = `
-            <img src="${Array.isArray(image_v) && image_v[random_v].search('https://drive.google.com/uc?export=view&id=') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
+            <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
         `
         document.querySelector('.modal__text span').innerText = wish[index]
 
