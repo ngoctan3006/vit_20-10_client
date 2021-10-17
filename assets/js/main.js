@@ -1,3 +1,17 @@
+// Hello animation
+const hello = document.querySelector('.hello__animation')
+const helloAnim = bodymovin.loadAnimation({
+    container: hello,
+    path: './assets/json/hello.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+})
+helloAnim.setSpeed(2)
+setTimeout(() => {
+    document.querySelector('.hello__modal').classList.remove('active')
+}, 4000)
+
 // Heart animation
 const heart = document.getElementById('heart')
 const heartAnimation = bodymovin.loadAnimation({
@@ -130,7 +144,37 @@ password.addEventListener('input', () => {
     formNotify.innerText = ''
 })
 
+const spinner = document.querySelector('.spinner__animation')
+const spinnerModal = document.getElementById('spiner')
+const spinnerAnim = bodymovin.loadAnimation({
+    container: spinner,
+    path: './assets/json/dot_spinner.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+})
+
+const loginNotify = document.querySelector('.notify__animation')
+const loginNotifyAnim = bodymovin.loadAnimation({
+    container: loginNotify,
+    path: './assets/json/error.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+})
+loginNotifyAnim.setSpeed(2)
+
+const notifyLoginModal = document.querySelector('.login__notify')
+const btnCfYes = document.getElementById('notify-yes')
+const btnCfNo = document.getElementById('notify-no')
+const defaultWish = [
+    'Chúc bạn 20/10 vui vẻ nha',
+    'Ngày 20/10 vui vẻ bạn nhé :>>',
+    'Chúc bạn luôn luôn vui vẻ trong cuộc sống :>>'
+]
+
 $('#form-login').on('submit', function (e) {
+    spinnerModal.classList.add('active')
     $.ajax({
         type: 'POST',
         url: 'https://from-boys-vit-with-love.netlify.app/.netlify/functions/api',
@@ -138,18 +182,24 @@ $('#form-login').on('submit', function (e) {
         success: data => {
             switch(data.message) {
                 case 'Wrong password':
+                    spinnerModal.classList.remove('active')
                     formNotify.innerText = 'Tên đăng nhập hoặc mật khẩu không chính xác'
                     break;
                 case 'Default':
+                    spinnerModal.classList.remove('active')
+                    notifyLoginModal.classList.add('active')
                     formNotify.innerText = ''
-                    const cf = confirm('Tài khoản không tồn tại? Tiếp tục đăng nhập với tư cách khác?')
-                    if(cf) {
+                    btnCfNo.addEventListener('click', () => {
+                        notifyLoginModal.classList.remove('active')
+                    })
+                    btnCfYes.addEventListener('click', () => {
+                        notifyLoginModal.classList.remove('active')
                         window.localStorage.setItem('fullName', JSON.stringify('bạn'))
                         window.localStorage.setItem('image_h', JSON.stringify(''))
                         window.localStorage.setItem('image_v', JSON.stringify(''))
-                        window.localStorage.setItem('wish', JSON.stringify(''))
+                        window.localStorage.setItem('wish', JSON.stringify(defaultWish))
                         window.location = '../../gift.html'
-                    }
+                    })
                     break;
                 case 'Success':
                     window.localStorage.setItem('fullName', JSON.stringify(data.fullName))
