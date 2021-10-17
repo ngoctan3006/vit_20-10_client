@@ -436,6 +436,10 @@ body {
         --font-small: 1.1rem;
     }
 
+    .main {
+        height: 90vh;
+    }
+
     .card {
         width: 18rem;
     }
