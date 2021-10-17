@@ -65,7 +65,7 @@ fullNameEl.innerText = fullName
 const cardWrap = document.getElementById('wrapper')
 const modalWrap = document.getElementById('modal-wrap')
 
-wishes.forEach(wish => {
+wishes.forEach((wish, index) => {
     const divEl = document.createElement('div')
     divEl.classList.add('card')
     cardWrap.appendChild(divEl)
@@ -86,11 +86,41 @@ wishes.forEach(wish => {
                 <div class="img__vertical">
                     <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
                 </div>
+                <button id="downloadBtn${index}" style="position: absolute; top:0; left:0;">Download</button>
             </div>
-            <p class="modal__text">${wish}</p>
+            <p class="modal__text" id="wishText${index}">${wish}</p>
+            <div>
+                <img id="textScreenshot${index}" src="" />
+            </div>
         </div>
     `
     modalWrap.appendChild(modal)
+
+    var screenshot;
+    var wishText = document.getElementById("wishText" + index)
+
+    html2canvas(wishText).then(function (canvas) {
+        console.log(wishText);
+        screenshot = canvas.toDataURL("image/png");
+        document.getElementById("textScreenshot" + index).setAttribute("src", screenshot);
+    });
+
+    // Download button
+    var downloadBtn = document.getElementById("downloadBtn" + index);
+
+    // Onclick listener
+    downloadBtn.addEventListener("click", () => {
+        console.log("download btn clicked");
+
+        var a = $("<a>")
+            .attr("href", screenshot)
+            .attr("download", "img.png")
+            .appendTo("body");
+
+        a[0].click();
+
+        a.remove();
+    });
 })
 
 const cards = document.querySelectorAll('.card')
