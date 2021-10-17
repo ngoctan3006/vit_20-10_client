@@ -155,7 +155,9 @@ closeBtns.forEach((closeBtn, index) => {
             cardAnimations[index].goToAndPlay(160, true)
             cardAnimations[index].addEventListener('complete', () => {
                 layer.classList.remove('active')
-                cards[index].classList.remove('disable', 'floating')
+                setTimeout(() => {
+                    cards[index].classList.remove('disable', 'floating')
+                }, 300)
             })
         }, 300)
     })
