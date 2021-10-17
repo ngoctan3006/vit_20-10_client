@@ -138,10 +138,7 @@ cards.forEach(card => {
 cardAnimations.forEach((cardAni, index) => {
     cards[index].addEventListener('click', () => {
         cardAni.goToAndPlay(15, true)
-        cards.forEach(card => {
-            card.classList.add('disable')
-        })
-        cards[index].classList.add('floating')
+        cards[index].classList.add('disable', 'floating')
         layer.classList.add('active')
         setTimeout(() => {
             cardAni.pause()
@@ -158,10 +155,7 @@ closeBtns.forEach((closeBtn, index) => {
             cardAnimations[index].goToAndPlay(160, true)
             cardAnimations[index].addEventListener('complete', () => {
                 layer.classList.remove('active')
-                cards.forEach(card => {
-                    card.classList.remove('disable')
-                    card.classList.remove('floating')
-                })
+                cards[index].classList.remove('disable', 'floating')
             })
         }, 300)
     })

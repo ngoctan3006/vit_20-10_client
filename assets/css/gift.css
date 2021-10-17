@@ -33,6 +33,10 @@ body {
     overflow: hidden;
 }
 
+#wrap-1 {
+    width: 100%;
+}
+
 .title {
     margin: 2rem auto 0;
     font-size: var(--font-big);
@@ -51,7 +55,7 @@ body {
 
 .gift {
     width: 800px;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     cursor: pointer;
 }
 
@@ -83,6 +87,7 @@ body {
     animation: zoomIn 0.5s ease-in-out;
     transform-origin: center 75%;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 @keyframes zoomIn {
