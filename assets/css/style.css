@@ -71,7 +71,7 @@ body {
     border-radius: 5rem;
     cursor: pointer;
     transition: opacity ease-in 0.2s;
-    font-size: var(--font-normal);
+    font-size: var(--font-small);
 }
 
 .btn--success {
@@ -461,16 +461,11 @@ body {
         --font-big: 1.2rem;
         --font-bigger: 1.5rem;
         --normal-font-size: 0.75rem;
-        --font-normal: 0.75rem;
-        --font-small: 1rem;
+        --font-small: 0.75rem;
     }
 
     .card {
         width: 16rem;
-    }
-
-    .card__btn {
-        width: 5rem;
     }
 
     .card__content {
@@ -483,7 +478,7 @@ body {
     }
 
     .heart__wrap {
-        width: 280px;
+        width: 240px;
     }
 
     .heart-flying {
