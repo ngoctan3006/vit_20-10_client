@@ -459,7 +459,9 @@ body {
 @media only screen and (max-width: 320px) {
     :root {
         --font-big: 1.2rem;
+        --font-bigger: 1.5rem;
         --normal-font-size: 0.75rem;
+        --font-normal: 0.75rem;
         --font-small: 1rem;
     }
 
@@ -490,5 +492,9 @@ body {
 
     .form {
         width: 290px;
+    }
+
+    .form__title {
+        font-size: var(--font-big);
     }
 }

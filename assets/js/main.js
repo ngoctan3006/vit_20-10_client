@@ -139,16 +139,14 @@ $('#form-login').on('submit', function (e) {
                     formNotify.innerText = ''
                     const cf = confirm('Tài khoản không tồn tại? Tiếp tục đăng nhập với tư cách khác?')
                     if(cf) {
-                        window.localStorage.setItem('fullName', '')
-                        window.localStorage.setItem('image_h', '')
-                        window.localStorage.setItem('image_v', '')
-                        window.localStorage.setItem('wish', '')
+                        window.localStorage.setItem('fullName', JSON.stringify('bạn'))
+                        window.localStorage.setItem('image_h', JSON.stringify(''))
+                        window.localStorage.setItem('image_v', JSON.stringify(''))
+                        window.localStorage.setItem('wish', JSON.stringify(''))
                         window.location = '../../gift.html'
                     }
                     break;
                 case 'Success':
-                    console.log(data.image_h)
-                    console.log(data.image_v)
                     window.localStorage.setItem('fullName', JSON.stringify(data.fullName))
                     window.localStorage.setItem('image_h', JSON.stringify(data.image_h))
                     window.localStorage.setItem('image_v', JSON.stringify(data.image_v))
