@@ -291,6 +291,7 @@ body {
     border: none;
     background-color: var(--first-color);
     color: #fff;
+    font-family: var(--body-font);
     font-size: var(--normal-font-size);
     border-radius: 0.5rem;
     cursor: pointer;
