@@ -78,6 +78,11 @@ let count = 0
 total.innerText = reason.length
 curr.innerText = reason.length
 const inputReason = document.getElementById('card-input')
+
+window.onload = () => {
+    inputReason.value = ''
+}
+
 inputReason.oninput = () => {
     if (count < reason.length) {
         inputReason.value = reason.substring(0, ++count)
