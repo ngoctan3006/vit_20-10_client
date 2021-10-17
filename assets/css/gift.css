@@ -1,5 +1,5 @@
 /* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Pacifico&display=swap');
 
 /* Base */
 :root {
@@ -8,7 +8,7 @@
     --font-normal: 2rem;
     --font-small: 1.5rem;
 
-    --body-font: 'Roboto', sans-serif;
+    --body-font: 'Pacifico', cursive;
 }
 
 * {
@@ -20,6 +20,10 @@
 body {
     font-size: 62.5%;
     font-family: var(--body-font);
+    background: padding-box no-repeat url('../img/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Gift */
@@ -33,15 +37,11 @@ body {
     overflow: hidden;
 }
 
-#wrap-1 {
-    width: 100%;
-}
-
 .title {
     margin: 2rem auto 0;
     font-size: var(--font-big);
     font-weight: 500;
-    max-width: 70%;
+    max-width: 90%;
 }
 
 .title__icon {
