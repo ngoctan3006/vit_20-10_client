@@ -34,9 +34,10 @@ body {
 }
 
 .title {
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     font-size: var(--font-big);
     font-weight: 500;
+    max-width: 70%;
 }
 
 .title__icon {
@@ -95,6 +96,23 @@ body {
     }
 }
 
+.layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.floating {
+    z-index: 99;
+}
+
 .loading__modal,
 .modal {
     position: fixed;
@@ -106,6 +124,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 199;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;

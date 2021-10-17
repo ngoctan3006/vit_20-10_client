@@ -122,6 +122,7 @@ modalTexts.forEach(modalText => {
 
 // Card animation
 const cardAnimations = []
+const layer = document.querySelector('.layer')
 cards.forEach(card => {
     const animation = bodymovin.loadAnimation({
         container: card,
@@ -140,6 +141,8 @@ cardAnimations.forEach((cardAni, index) => {
         cards.forEach(card => {
             card.classList.add('disable')
         })
+        cards[index].classList.add('floating')
+        layer.classList.add('active')
         setTimeout(() => {
             cardAni.pause()
             modals[index].classList.add('active')
@@ -154,8 +157,10 @@ closeBtns.forEach((closeBtn, index) => {
         setTimeout(() => {
             cardAnimations[index].goToAndPlay(160, true)
             cardAnimations[index].addEventListener('complete', () => {
+                layer.classList.remove('active')
                 cards.forEach(card => {
                     card.classList.remove('disable')
+                    card.classList.remove('floating')
                 })
             })
         }, 300)
