@@ -84,7 +84,7 @@ form_1.onsubmit = e => {
 }
 
 // Set reason
-const reason = 'Vì anh em quá đẹp trai, soái ca với ga lăng nữa, hihi'
+const reason = 'Vì anh em quá đẹp trai, soái ca với ga lăng nữa, hihi :>>>>>'
 const btnOk = document.getElementById('card-ok')
 const total = document.getElementById('total')
 const curr = document.getElementById('curr')
