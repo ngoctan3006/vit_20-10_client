@@ -8,6 +8,7 @@
     --font-normal: 2rem;
     --font-small: 1.5rem;
 
+    --primary-color: #a42fd3;
     --body-font: 'Pacifico', cursive;
 }
 
@@ -42,6 +43,7 @@ body {
     font-size: var(--font-big);
     font-weight: 500;
     max-width: 90%;
+    color: var(--primary-color);
 }
 
 .title__icon {
@@ -51,6 +53,7 @@ body {
 .sub__title {
     margin-top: 2rem;
     font-size: var(--font-small);
+    color: var(--primary-color);
 }
 
 .gift {
@@ -159,6 +162,7 @@ body {
 .loading__text {
     font-size: var(--font-big);
     margin-top: 2rem;
+    color: var(--primary-color);
 }
 
 .active {

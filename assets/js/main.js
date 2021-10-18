@@ -94,6 +94,11 @@ curr.innerText = reason.length
 const inputReason = document.getElementById('card-input')
 
 window.onload = () => {
+    document.body.style.backgroundImage = 'url("./assets/img/bg1.jpg")'
+    document.querySelector('.main').classList.remove('blur')
+    document.querySelectorAll('.main .btn').forEach(el => {
+        el.classList.remove('blur')
+    })
     inputReason.value = ''
 }
 

@@ -9,7 +9,7 @@
     --font-small: 1.5rem;
     --font-smaller: 1rem;
 
-    --first-color: #1a73e8;
+    --primary-color: #a42fd3;
     --input-color: #80868b;
     --border-color: #dadce0;
     --body-font: 'Pacifico', cursive;
@@ -26,7 +26,7 @@
 body {
     font-size: 62.5%;
     font-family: var(--body-font);
-    background: padding-box no-repeat url('../img/bg1.jpg');
+    background: padding-box no-repeat url('../img/bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -34,6 +34,10 @@ body {
 
 .main {
     height: 100vh;
+}
+
+.blur {
+    opacity: 0;
 }
 
 .title {
@@ -44,6 +48,7 @@ body {
     font-size: var(--font-bigger);
     font-weight: 500;
     text-align: center;
+    color: var(--primary-color);
 }
 
 #btn-yes,
@@ -101,7 +106,7 @@ body {
 }
 
 .btn--primary {
-    background-color: var(--first-color);
+    background-color: var(--primary-color);
 }
 
 .btn--danger {
@@ -161,6 +166,7 @@ body {
 .hello__text {
     margin-top: 2rem;
     font-size: var(--font-big);
+    color: var(--primary-color);
 }
 
 .hello__modal.active {
@@ -196,6 +202,7 @@ body {
     background-color: #fff;
     border-radius: 0.5rem;
     padding: 0 1rem;
+    color: var(--primary-color);
 }
 
 .card__close-icon {
@@ -242,10 +249,11 @@ body {
     padding: 1rem;
     background: none;
     font-family: var(--body-font);
+    color: var(--primary-color);
 }
 
 .card__input:focus {
-    border-color: var(--first-color);
+    border-color: var(--primary-color);
 }
 
 .card__btn {
@@ -293,6 +301,7 @@ body {
 .form__title {
     font-weight: 400;
     margin-bottom: 3rem;
+    color: var(--primary-color);
     font-size: var(--font-normal);
 }
 
@@ -315,6 +324,7 @@ body {
     outline: none;
     padding: 1rem;
     background: none;
+    color: var(--primary-color);
     z-index: 1;
 }
 
@@ -342,7 +352,7 @@ body {
     padding: 0.75rem 2rem;
     outline: none;
     border: none;
-    background-color: var(--first-color);
+    background-color: var(--primary-color);
     color: #fff;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
@@ -359,7 +369,7 @@ body {
 .form__input:focus + .form__label {
     top: -0.7rem;
     left: 0.8rem;
-    color: var(--first-color);
+    color: var(--primary-color);
     font-size: var(--small-font-size);
     font-weight: 500;
     z-index: 10;
@@ -376,7 +386,7 @@ body {
 
 /* Input focus */
 .form__input:focus {
-    border: 2px solid var(--first-color);
+    border: 2px solid var(--primary-color);
 }
 
 /* Spinner */
