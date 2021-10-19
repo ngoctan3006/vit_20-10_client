@@ -183,9 +183,9 @@ const notifyLoginModal = document.querySelector('.login__notify')
 const btnCfYes = document.getElementById('notify-yes')
 const btnCfNo = document.getElementById('notify-no')
 const defaultWish = [
-    'Chúc bạn 20/10 vui vẻ nha',
-    'Ngày 20/10 vui vẻ bạn nhé :>>',
-    'Chúc bạn luôn luôn vui vẻ trong cuộc sống :>>'
+    'Girl VIT là phải lit, hãy luôn cháy hết mình cậU nhé ^^',
+    'Chúc cậu có được tất cả niềm hạnh phúc trên thế gian này :>>',
+    'Hãy để mặt trời thắp sáng con đường thành công của bạn và hãy để gió đưa bạn đến đó! Chúc may mắn cho ngày hôm nay & cho nhiều ngày mai! 😊'
 ]
 
 $('#form-login').on('submit', function (e) {
