@@ -422,7 +422,7 @@ body {
     margin: 0 auto;
     font-size: var(--font-small);
     text-align: center;
-    color: red;
+    color: #ff623d;
 }
 
 .notify__animation {
