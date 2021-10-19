@@ -21,6 +21,7 @@ const giftAnimation = bodymovin.loadAnimation({
 })
 
 gift.addEventListener('click', () => {
+    gift.classList.add('disable')
     giftAnimation.goToAndPlay(0, true)
 })
 
@@ -164,3 +165,38 @@ closeBtns.forEach((closeBtn, index) => {
         }, 300)
     })
 })
+
+// Download card
+// const downloadBtns = document.querySelectorAll('.modal__download')
+// const modalCards = document.querySelectorAll('.modal__card-wrap')
+// downloadBtns.forEach((el, index) => {
+//     el.addEventListener('click', () => {
+//         domtoimage.toJpeg(modalCards[index], { quality: 1 })
+//             .then(dataUrl => {
+//                 const link = document.createElement('a')
+//                 link.download = `card${index}.jpeg`
+//                 link.href = dataUrl
+//                 link.click()
+//             })
+//     })
+// })
+{/* <div class="modal__body">
+    <div class="modal__download">
+        <i class='bx bx-download modal__download-icon'></i>
+        <span>Download</span>
+    </div>
+    <div class="modal__close">
+        <i class='bx bx-x modal__close-icon'></i>
+    </div>
+    <div class="modal__card-wrap">
+        <div class="modal__card">
+            <div class="img__horizontal">
+                <img src="${image_h[random_h] && image_h[random_h].search('&id=1') !== -1 ? image_h[random_h] : './assets/img/ngang.png'}" alt="" class="card__img">
+            </div>
+            <div class="img__vertical">
+                <img src="${image_v[random_v] && image_v[random_v].search('&id=1') !== -1 ? image_v[random_v] : './assets/img/doc.png'}" alt="" class="card__img">
+            </div>
+        </div>
+        <p class="modal__text">${wish}</p>
+    </div>
+</div> */}

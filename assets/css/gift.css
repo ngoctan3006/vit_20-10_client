@@ -7,6 +7,7 @@
     --font-big: 2.5rem;
     --font-normal: 2rem;
     --font-small: 1.5rem;
+    --font-smaller: 1rem;
 
     --primary-color: #a64969;
     --body-font: 'Pacifico', cursive;
@@ -181,12 +182,51 @@ body {
     transform: scale(1);
 }
 
+.modal__download {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    align-items: center;
+    transition: all linear 0.3s;
+    cursor: pointer;
+}
+
+.modal__download-icon {
+    font-size: var(--font-normal);
+}
+
+.modal__download span {
+    font-size: var(--font-smaller);
+    padding-left: 0.5rem;
+}
+
+.modal__download:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 .modal__close {
     position: absolute;
     top: 0.6rem;
     right: 0.6rem;
     padding: 0.5rem;
     cursor: pointer;
+}
+
+.modal__close-icon {
+    font-size: var(--font-normal);
+    opacity: 1;
+    transition: opacity linear 0.3s;
+    color: var(--primary-color);
+}
+
+.modal__close-icon:hover {
+    opacity: 0.7;
 }
 
 .modal__card {
@@ -218,17 +258,13 @@ body {
     pointer-events: none;
 }
 
-.modal__close-icon {
-    font-size: var(--font-normal);
-    transition: opacity linear 0.3s;
-}
-
-.modal__close-icon:hover {
-    opacity: 0.7;
-}
-
 .img__vertical {
     display: none;
+    pointer-events: none;
+}
+
+.img__horizontal {
+    pointer-events: none;
 }
 
 /* Media queries */
@@ -266,6 +302,7 @@ body {
         --font-bigger: 2rem;
         --font-big: 1.5rem;
         --font-normal: 1.1rem;
+        --font-smaller: 0.75rem;
     }
 
     .confetti {
@@ -277,7 +314,7 @@ body {
     }
 
     .modal__card {
-        padding: 3rem 1rem;
+        padding: 3.5rem 1rem;
         width: 23rem;
     }
 
