@@ -39,31 +39,41 @@ heartFlyings.forEach(el => {
 const btnYes = document.getElementById('btn-yes')
 const btnNo = document.getElementById('btn-no')
 const title = document.getElementById('title')
+const bodyWidth = document.body.clientWidth
+const bodyHeight = document.body.clientHeight
+const btnWidth = btnNo.offsetWidth
+const btnHeight = btnNo.offsetHeight
+const titleHeight = title.offsetHeight + title.offsetTop
 
-btnNo.addEventListener('click', () => {
-    const bodyWidth = document.body.clientWidth
-    const bodyHeight = document.body.clientHeight
-    const btnWidth = btnNo.offsetWidth
-    const btnHeight = btnNo.offsetHeight
-    const titleHeight = title.offsetHeight + title.offsetTop
+if(bodyWidth < 768) {
+    btnNo.addEventListener('click', () => {
+        handlerNoBtnClick()
+    })
+} else {
+    btnNo.addEventListener('mouseover', () => {
+        handlerNoBtnClick()
+    })
+}
+
+function handlerNoBtnClick() {
     const oldLeft = btnNo.offsetLeft
     const oldTop = btnNo.offsetTop
     let newLeft = Math.abs(Math.floor(Math.random() * bodyWidth - btnWidth))
     let newTop = Math.abs(Math.floor(Math.random() * bodyHeight - btnHeight))
-
+    
     while (newLeft < btnWidth || newLeft + btnWidth >= bodyWidth || newLeft >= oldLeft - btnWidth && newLeft <= oldLeft + btnWidth) {
         newLeft = Math.abs(Math.floor(Math.random() * bodyWidth - btnWidth))
     }
     while (newTop < titleHeight || newTop + btnHeight >= bodyHeight || newTop >= oldTop - btnHeight && newTop <= oldTop + btnHeight) {
         newTop = Math.abs(Math.floor(Math.random() * bodyHeight - btnHeight))
     }
-
+    
     btnNo.style.left = newLeft + 'px'
     btnNo.style.top = newTop + 'px'
-
+    
     btnYes.style.left = oldLeft + 'px'
     btnYes.style.top = oldTop + 'px'
-})
+}
 
 // Modal 1
 const modal_1 = document.getElementById('modal-1')

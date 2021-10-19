@@ -105,6 +105,8 @@ modalTexts.forEach(modalText => {
         jQuery(modalText).fitText(0.8)
     } else if (len <= 100) {
         jQuery(modalText).fitText(1.0)
+    } else if (len == 188) {
+        jQuery(modalText).fitText(1.5)
     } else if (len <= 200) {
         jQuery(modalText).fitText(1.3)
     } else if (len <= 300) {
